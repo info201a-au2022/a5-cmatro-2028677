@@ -1,4 +1,6 @@
-# This file contains all of the UI code used to build the multi-page shiny app
+co2_sources <- co2_data %>% 
+  select(year, country, co2, gas_co2, oil_co2) %>% 
+  group_by(year, country)
 
 # Page 1
 intro_panel <- tabPanel(
@@ -14,11 +16,11 @@ intro_panel <- tabPanel(
   h3("Selected Variables"),
   strong("1. co2"), p("- annual total production-based emissions of carbon 
                        dioxide (CO2), excluding land-use change, measured in 
-                       million tonnes."),
+                       million tonnes"),
   strong("2. gas_co2"), p("- annual production-based emissions of carbon dioxide 
-                           (CO2) from gas, measured in million tonnes."),
+                           (CO2) from gas, measured in million tonnes"),
   strong("3. oil_co2"), p("- annual production-based emissions of carbon dioxide
-                           (CO2) from oil, measured in million tonnes."),
+                           (CO2) from oil, measured in million tonnes"),
   p(""),
   em(""),
   h3("Relevant Values"),
@@ -76,7 +78,7 @@ interactive_panel <- tabPanel(
     total was 12,345.65 million tonnes.")
 )
 
-# Define UI
+# UI
 ui <- navbarPage(
     theme = shinytheme("superhero"),
     "CO2 Emissions",

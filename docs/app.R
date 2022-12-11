@@ -1,11 +1,9 @@
 library(tidyverse)
 library(plotly)
 library(ggplot2)
-library(usmap)
 library(scales)
 library(shiny)
 library(dplyr)
-library(bslib)
 library(stringr)
 library(shinythemes)
 

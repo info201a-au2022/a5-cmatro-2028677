@@ -4,9 +4,6 @@ co2_sources <- co2_data %>%
   select(year, country, co2, gas_co2, oil_co2) %>% 
   group_by(year, country)
 
-# co2_sources <- rename(co2_sources, "CO2" = co2,"Gas CO2" = gas_co2, 
-#                       "Oil CO2" = oil_co2)
-
 # Value 1: World Total CO2 Emission Increase from 1750 to 2021
 world_co2_1750 <- co2_data %>% 
   select(year, country, co2) %>% 
