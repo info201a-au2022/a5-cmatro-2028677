@@ -1,3 +1,5 @@
+# Run the App
+
 library(tidyverse)
 library(plotly)
 library(ggplot2)
@@ -10,5 +12,4 @@ library(shinythemes)
 source("app_server.r")
 source("app_ui.r")
 
-# Run the application
 shinyApp(ui = ui, server = server)

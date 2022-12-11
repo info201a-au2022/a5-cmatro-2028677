@@ -1,3 +1,5 @@
+# Shiny App Server
+
 # co2_data <- read.csv("co2_data.csv")
 
 co2_sources <- co2_data %>% 
@@ -56,9 +58,8 @@ server <- function(input, output) {
         labs(title = "Worldwide CO2 Emission", x = "Year", y = "CO2 Emission (million tonnes)") +
         scale_y_continuous(labels = scales::comma) +
         scale_x_continuous()
-      scatter <- scatter + theme(legend.title = element_blank())
-      scatter <- scatter + theme(legend.position='none')
-      # plotly
+      
+      # Plotly
       scatter_plotly <- ggplotly(scatter, tooltip = "text")
       return(scatter_plotly)
     } else if(input$source == "Gas CO2 Emissions"){
@@ -73,9 +74,8 @@ server <- function(input, output) {
         labs(title = "Worldwide Gas CO2 Emission", x = "Year", y = "Gas CO2 Emission (million tonnes)") +
         scale_y_continuous(labels = scales::comma) +
         scale_x_continuous()
-      gas_scatter <- gas_scatter + theme(legend.title = element_blank())
-      gas_scatter <- gas_scatter + theme(legend.position='none')
-      # plotly
+
+      # Plotly
       gas_scatter_plotly <- ggplotly(gas_scatter, tooltip = "text")
       return(gas_scatter_plotly)
     } else {
@@ -90,9 +90,8 @@ server <- function(input, output) {
         labs(title = "Worldwide Oil CO2 Emission", x = "Year", y = "Oil CO2 Emission (million tonnes)") +
         scale_y_continuous(labels = scales::comma) +
         scale_x_continuous()
-      oil_scatter <- oil_scatter + theme(legend.title = element_blank())
-      oil_scatter <- oil_scatter + theme(legend.position='none')
-      # plotly
+
+      # Plotly
       oil_scatter_plotly <- ggplotly(oil_scatter, tooltip = "text")
       return(oil_scatter_plotly)
     }

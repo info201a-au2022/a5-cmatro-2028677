@@ -1,3 +1,5 @@
+# Shiny App UI
+
 co2_sources <- co2_data %>% 
   select(year, country, co2, gas_co2, oil_co2) %>% 
   group_by(year, country)
