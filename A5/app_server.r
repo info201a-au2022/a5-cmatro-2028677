@@ -43,7 +43,7 @@ server <- function(input, output) {
     list(src = "gas_em.jpg",
          width = "50%",
          height = "100%")
-  })
+  }, deleteFile = FALSE)
   
   # Scatterplot
   output$scatterplot <- renderPlotly({
