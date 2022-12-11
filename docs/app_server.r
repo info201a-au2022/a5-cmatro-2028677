@@ -1,4 +1,4 @@
-#co2_data <- read.csv("co2_data.csv")
+# co2_data <- read.csv("co2_data.csv")
 
 co2_sources <- co2_data %>% 
   select(year, country, co2, gas_co2, oil_co2) %>% 
@@ -17,7 +17,7 @@ world_co2_2021 <- co2_data %>%
          country == "World") %>% 
   pull(co2) # 37,123.85 tonnes
 
-co2_1750_2021 <- (world_co2_2021 - co2_1750) # 37,114.50 tonnes
+co2_1750_2021 <- (world_co2_2021 - world_co2_1750) # 37,114.50 tonnes
 
 # Value 2: Country with Highest Gas CO2 Emission
 high_gas_co2 <- co2_data %>% 
